@@ -26,7 +26,6 @@ DenseMatrix *create_dense_matrix(const unsigned long rows, const unsigned long c
     return matrix;
 }
 
-
 void set_dense_matrix_data(DenseMatrix *matrix, const double *src) {
     if (!matrix || !matrix->data || !src) {
         throw std::runtime_error("Invalid matrix or source");

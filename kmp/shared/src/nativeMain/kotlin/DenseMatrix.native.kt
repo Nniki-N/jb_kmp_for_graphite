@@ -3,8 +3,11 @@ import matrix.*
 
 @OptIn(ExperimentalForeignApi::class)
 actual class DenseMatrix actual constructor(actual val rows: Int, actual val cols: Int) {
+
+    // Pointer to the C DenseMatrix instance
     private var ptr: CPointer<cnames.structs.DenseMatrix>? = create_dense_matrix_c(rows.convert(), cols.convert())
 
+    // Secondary constructor used for multiply
     private constructor(ptr: CPointer<cnames.structs.DenseMatrix>, rows: Int, cols: Int) : this(rows, cols) {
         this.ptr = ptr
     }
