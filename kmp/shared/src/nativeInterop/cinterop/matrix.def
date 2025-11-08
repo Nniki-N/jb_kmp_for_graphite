@@ -1,0 +1,5 @@
+language = C
+headers = matrix_c.h
+compilerOpts = -I../cpp
+linkerOpts = -L../cpp -lmatrix -rpath ../cpp
+
